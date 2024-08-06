@@ -1,4 +1,4 @@
-# Angular Standalone Authentication Application
+# Angular 17 and .Net 8 Jwt Authentication Application
 
 This is an Angular 17 standalone application that demonstrates user authentication, role-based access control, and token refresh using `CanActivateFn` for guards and `HttpInterceptorFn` for interceptors.
 

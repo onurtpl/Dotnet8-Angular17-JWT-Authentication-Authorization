@@ -66,8 +66,7 @@ src/
 |   |   |   ├── AuthResponseDto.cs
 |   |   ├── Features/
 |   |   |   ├── Application/
-|   |   |   |   | ...
-|   |   |   ├── Identity
+|   |   |   ├── Identity/
 |   |   |   |   ├── Commands/
 |   |   |   |   |   ├── AssignRole/
 |   |   |   |   |   |   ├── AssignRoleCommand.cs
@@ -127,7 +126,6 @@ src/
 |   |   |   ├── ApplicationDbContext.cs
 |   |   ├── Implementations/
 |   |   |   ├── ApplicationImplementations/
-|   |   |   |   ├── ...
 |   |   |   ├── IdentityImplementations/
 |   |   |   |   ├── IdentityRepository.cs
 |   |   |   ├── MailImplementations/

@@ -27,11 +27,11 @@ cd Dotnet8-Angular17-JWT-Authentication-Authorization
 
 
 ### Installation
-\src/
-\├── backend/ 
-\|   ├── API/
-\|   |   ├── Configurations/ 
-|   |   |   ├── APIConfigurations.cs 
+src/ \
+├── backend/ \
+|   ├── API/ \
+|   |   ├── Configurations/ \
+|   |   |   ├── APIConfigurations.cs \
 |   |   |   ├── ApplicationConfigurations.cs
 |   |   |   ├── InfrastructureConfigurations.cs
 |   |   |   ├── RepositoryConfigurations.cs

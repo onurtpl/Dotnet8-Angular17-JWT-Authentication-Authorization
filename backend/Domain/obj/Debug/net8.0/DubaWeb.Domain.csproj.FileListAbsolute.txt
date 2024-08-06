@@ -1,0 +1,12 @@
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\bin\Debug\net8.0\DubaWeb.Domain.deps.json
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\bin\Debug\net8.0\DubaWeb.Domain.dll
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\bin\Debug\net8.0\DubaWeb.Domain.pdb
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\obj\Debug\net8.0\DubaWeb.Domain.csproj.AssemblyReference.cache
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\obj\Debug\net8.0\DubaWeb.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\obj\Debug\net8.0\DubaWeb.Domain.AssemblyInfoInputs.cache
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\obj\Debug\net8.0\DubaWeb.Domain.AssemblyInfo.cs
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\obj\Debug\net8.0\DubaWeb.Domain.csproj.CoreCompileInputs.cache
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\obj\Debug\net8.0\DubaWeb.Domain.dll
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\obj\Debug\net8.0\refint\DubaWeb.Domain.dll
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\obj\Debug\net8.0\DubaWeb.Domain.pdb
+D:\Custom\Dotnet\DubaWeb\backend\DubaWeb.Domain\obj\Debug\net8.0\ref\DubaWeb.Domain.dll

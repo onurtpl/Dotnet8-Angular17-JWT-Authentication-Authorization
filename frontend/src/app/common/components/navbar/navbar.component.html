@@ -1,0 +1,43 @@
+<header>
+  <div class="bg-blue-500 text-white p-4 flex justify-between items-center">
+    <div>
+      <a href="mailto:Example@gmail.com" class="mr-4">Example gmail.com</a>
+      <a href="tel:+01234567890">+01234567890</a>
+    </div>
+    <div class="space-x-4">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+  <nav class="bg-gray-100 p-4">
+    <ul class="flex justify-around list-none m-0 p-0 items-center">
+      <li><a href="#" class="text-blue-500">Home</a></li>
+      <li><a href="#" class="text-blue-500">About</a></li>
+      <li><a href="#" class="text-blue-500">Services</a></li>
+      <li><a href="#" class="text-blue-500">Causes</a></li>
+      <li><a href="#" class="text-blue-500">Events</a></li>
+      <li class="relative ">
+        <button mat-button [matMenuTriggerFor]="pagesMenu" class="text-blue-500 menu-drop">Pages</button>
+        <mat-menu #pagesMenu="matMenu">
+          <button mat-menu-item>Main</button>
+          <button mat-menu-item>Detail</button>
+        </mat-menu>
+      </li>
+      <li><a href="#" class="text-blue-500">Contact</a></li>
+      @if(this.authService.isAuthenticated()) {
+        <li class="relative ">
+          <button mat-button [matMenuTriggerFor]="pagesMenu" class="text-blue-500 menu-drop">{{fullName}}</button>
+          <mat-menu #pagesMenu="matMenu">
+            <button mat-menu-item routerLink="/detail">Detail</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+          </mat-menu>
+        </li>
+      } @else {
+        <li><a routerLink="auth/login" class="bg-blue-500 text-white px-4 py-2">Login/Register</a></li>
+      } 
+    </ul>
+  </nav>
+</header>

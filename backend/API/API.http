@@ -1,0 +1,6 @@
+@DubaWeb.API_HostAddress = http://localhost:5027
+
+GET {{DubaWeb.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

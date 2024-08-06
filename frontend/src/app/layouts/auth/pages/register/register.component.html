@@ -1,0 +1,38 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <app-reactive-text-input [control]="userNameControl" labelText="User Name" id="userName" type="text" placeholder="Username">
+  </app-reactive-text-input>
+  <app-reactive-text-input [control]="nameControl" labelText="Name" id="name" type="text" placeholder="Name">
+  </app-reactive-text-input>
+  <app-reactive-text-input [control]="surNameControl" labelText="Surname" id="surname" type="text" placeholder="Surame">
+  </app-reactive-text-input>
+  <app-reactive-text-input [control]="phoneNumberControl" labelText="Phone Number" id="phonenumber" type="text" placeholder="+1234567890">
+  </app-reactive-text-input>
+  <app-reactive-text-input [control]="emailControl" labelText="Email" id="email" type="email" placeholder="example@email.com">
+  </app-reactive-text-input>
+
+
+  <div class="mb-1">
+    <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+    <div class="flex items-center border rounded shadow appearance-none">
+      <input type="password" formControlName="password" id="password" placeholder="********"
+        class="w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+      <button type="button" appTogglePassword class="fa fa-eye p-2"></button>
+    </div>
+    <div *ngIf="passwordControl?.invalid && (passwordControl?.dirty || passwordControl?.touched)" class="text-red-500 text-xs italic">
+      <p *ngIf="passwordControl?.errors?.['required']">This field is required.</p>
+      <p *ngIf="passwordControl?.errors?.['minlength']">This field must be at least {{ passwordControl.errors?.['minlength']?.['requiredLength'] }} characters.</p>
+    </div>
+  </div>
+
+  <div class="flex items-center my-4 justify-between ">
+    <button type="submit"
+      class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Register</button>
+  </div>
+
+  <!-- Add account question and link to login -->
+  <div class="mt-4 text-center">
+    <p class="text-gray-600 text-sm">Do you already have an account?</p>
+    <a routerLink="/auth/login" class="text-blue-500 hover:text-blue-700 font-semibold">Log in here</a>
+  </div>
+</form>

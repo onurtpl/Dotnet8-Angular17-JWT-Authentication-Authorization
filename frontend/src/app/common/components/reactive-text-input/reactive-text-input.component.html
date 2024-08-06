@@ -1,0 +1,14 @@
+<!-- common-text-input.component.html -->
+<div class="mb-1">
+  <label class="block text-gray-700 text-sm font-bold mb-2">{{ labelText }}</label>
+  <div class="flex items-center border rounded shadow appearance-none">
+    <input [type]="type" [formControl]="control!" [id]="id" [placeholder]="placeholder"
+      class="w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+  </div>
+  <div *ngIf="control?.invalid && (control?.dirty || control?.touched)" class="text-red-500 text-xs italic">
+    <p *ngIf="control?.errors?.['required']">This field is required.</p>
+    <p *ngIf="control?.errors?.['email']">Please enter a valid email.</p>
+    <p *ngIf="control?.errors?.['minlength']">This field must be at least {{ control?.errors?.['minlength']?.['requiredLength'] }} characters.</p>
+    <p *ngIf="control?.errors?.['pattern']">Please enter a valid value.</p>
+  </div>
+</div>

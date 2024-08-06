@@ -1,0 +1,22 @@
+.mat-menu-content {
+    background-color: white; /* Optional: to set a background color for the dropdown */
+  }
+  
+  .menu-drop {
+    color: #3B82F6 !important; /* Tailwind's blue-500 color */
+  }
+  .mat-menu-item {
+    color: #3B82F6 !important; /* Tailwind's blue-500 color */
+  }
+  
+  .mat-menu-item:hover {
+    background-color: #E5E7EB; /* Tailwind's gray-200 color for hover effect */
+  }
+  
+  .mat-button, .mat-button-wrapper, .mat-focus-indicator {
+    color: #3B82F6 !important;
+  }
+  
+  .mat-button.mat-button-base:focus, .mat-button.mat-button-base:active, .mat-button.mat-button-base:hover {
+    background-color: transparent !important;
+  }

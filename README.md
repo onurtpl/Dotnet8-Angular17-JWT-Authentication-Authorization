@@ -23,8 +23,11 @@ This is an Angular 17 standalone application that demonstrates user authenticati
    ```bash
 
 git clone https://github.com/onurtpl/Dotnet8-Angular17-JWT-Authentication-Authorization.git
-   cd Dotnet8-Angular17-JWT-Authentication-Authorization
-$ tree
+cd Dotnet8-Angular17-JWT-Authentication-Authorization
+
+
+### Installation
+md-file-tree . > README.md
 src/
 ├── backend/
 |   ├── API/

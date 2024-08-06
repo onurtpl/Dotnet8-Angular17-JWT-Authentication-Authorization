@@ -21,7 +21,8 @@ This is an Angular 17 standalone application that demonstrates user authenticati
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/onurtpl/Dotnet8-Angular17-JWT-Authentication-Authorization.git```
+   git clone https://github.com/onurtpl/Dotnet8-Angular17-JWT-Authentication-Authorization.git
+   ```
 
 git clone https://github.com/onurtpl/Dotnet8-Angular17-JWT-Authentication-Authorization.git
 cd Dotnet8-Angular17-JWT-Authentication-Authorization

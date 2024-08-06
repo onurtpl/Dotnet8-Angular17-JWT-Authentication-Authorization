@@ -27,10 +27,112 @@ cd Dotnet8-Angular17-JWT-Authentication-Authorization
 
 
 ### Installation
-.
-├── ...
-├── test                    # Test files (alternatively `spec` or `tests`)
-│   ├── benchmarks          # Load and stress tests
-│   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
-│   └── unit                # Unit tests
-└── ...
+src/ __
+├── backend/ __
+|   ├── API/ __
+|   |   ├── Configurations/ __
+|   |   |   ├── APIConfigurations.cs __
+|   |   |   ├── ApplicationConfigurations.cs
+|   |   |   ├── InfrastructureConfigurations.cs
+|   |   |   ├── RepositoryConfigurations.cs
+|   |   ├── Controllers/
+|   |   |   ├── Abstractions/
+|   |   |   |   ├── ApiController.cs
+|   |   |   ├── AuthController.cs
+|   |   |   ├── RoleController.cs
+|   |   |   ├── UserController.cs
+|   |   ├── Middlewares/
+|   |   |   ├── ExceptionMiddleware.cs
+|   |   ├── Models/
+|   |   |   ├── ErrorResultModel.cs
+|   |   |   ├── ErrorStatusCodeModel.cs
+|   |   |   ├── ValidationErrorDetailsModel.cs
+|   |   ├── Program.cs
+|   |   ├── API.csproj
+|   |   ├── appsettings.json
+|   |   ├── appsettings.Development.json
+|   ├── Application/
+|   |   ├── Behaviors/
+|   |   |   ├── CustomValidationBehavior.cs
+|   |   ├── Contracts/
+|   |   |   ├── IdentityContracts/
+|   |   |   |   ├── IIdentityRepository.cs
+|   |   |   ├── MailContracts/
+|   |   |   |   ├── IMailRepository.cs
+|   |   ├── Dtos/
+|   |   |   ├── PaginationDtos/
+|   |   |   |   ├── PaginationRequestDto.cs
+|   |   |   |   ├── PaginationResponseDto.cs
+|   |   |   ├── AuthResponseDto.cs
+|   |   ├── Features/
+|   |   |   ├── Application/
+|   |   |   ├── Identity/
+|   |   |   |   ├── Commands/
+|   |   |   |   |   ├── AssignRole/
+|   |   |   |   |   |   ├── AssignRoleCommand.cs
+|   |   |   |   |   |   ├── AssignRoleCommandHandler.cs
+|   |   |   |   |   |   ├── AssignRoleCommandValidator.cs
+|   |   |   |   |   ├── CreateRole/
+|   |   |   |   |   |   ├── CreateRoleCommand.cs
+|   |   |   |   |   |   ├── CreateRoleCommandHandler.cs
+|   |   |   |   |   |   ├── CreateRoleCommandValidator.cs
+|   |   |   |   |   ├── ForgotPassword/
+|   |   |   |   |   |   ├── ForgotPasswordCommand.cs
+|   |   |   |   |   |   ├── ForgotPasswordCommandHandler.cs
+|   |   |   |   |   |   ├── ForgotPasswordCommandValidator.cs
+|   |   |   |   |   ├── GetUsers/
+|   |   |   |   |   |   ├── GetUsersCommand.cs
+|   |   |   |   |   |   ├── GetUsersCommandHandler.cs
+|   |   |   |   |   |   ├── GetUsersCommandResult.cs
+|   |   |   |   |   ├── Login/
+|   |   |   |   |   |   ├── LoginCommand.cs
+|   |   |   |   |   |   ├── LoginCommandHandler.cs
+|   |   |   |   |   |   ├── LoginCommandValidator.cs
+|   |   |   |   |   ├── RefreshToken/
+|   |   |   |   |   |   ├── RefreshTokenCommand.cs
+|   |   |   |   |   |   ├── RefreshTokenCommandHandler.cs
+|   |   |   |   |   |   ├── RefreshTokenCommandValidator.cs
+|   |   |   |   |   ├── Register/
+|   |   |   |   |   |   ├── RegisterCommand.cs
+|   |   |   |   |   |   ├── RegisterCommandHandler.cs
+|   |   |   |   |   |   ├── RegisterCommandValidator.cs
+|   |   |   |   |   ├── ResetPassword/
+|   |   |   |   |   |   ├── ResetPasswordCommand.cs
+|   |   |   |   |   |   ├── ResetPasswordCommandHandler.cs
+|   |   |   |   |   |   ├── ResetPasswordCommandValidator.cs
+|   |   |   |   ├── Queries/
+|   |   |   |   |   ├── GetRoles/
+|   |   |   |   |   |   ├── GetRolesQuery.cs
+|   |   |   |   |   |   ├── GetRolesQueryHandler.cs
+|   |   |   |   |   |   ├── GetRolesQueryResult.cs
+|   |   |   ├── Application.csproj
+|   |   |   ├── ApplicationAssembly.cs
+|   ├── Domain/
+|   |   ├── Entities/
+|   |   |   ├── Abstractions/
+|   |   |   |   ├── BaseEntity.cs
+|   |   |   ├── Errors/
+|   |   |   |   ├── ErrorLog.cs
+|   |   |   ├── IdentityEntities/
+|   |   |   |   ├── ApplicationRole.cs
+|   |   |   |   ├── ApplicationUser.cs
+|   |   ├── Domain.csproj
+|   ├── Infrastructure/
+|   |   ├── Configurations/
+|   |   |   ├── ApplicationRoleConfiguration.cs
+|   |   |   ├── ApplicationUserConfiguration.cs
+|   |   |   ├── ErrorLogConfiguration.cs
+|   |   ├── Context/
+|   |   |   ├── ApplicationDbContext.cs
+|   |   ├── Implementations/
+|   |   |   ├── ApplicationImplementations/
+|   |   |   ├── IdentityImplementations/
+|   |   |   |   ├── IdentityRepository.cs
+|   |   |   ├── MailImplementations/
+|   |   |   |   ├── MailRepository.cs
+|   |   ├── Initializations/
+|   |   |   ├── SeedUserAndRole.cs
+|   |   ├── Mapping/
+|   |   |   ├── MappingProfile.cs
+|   ├── Infrastructure.csproj
+|   ├── backend.sln

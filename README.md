@@ -22,12 +22,19 @@ This is an Angular 17 standalone application that demonstrates user authenticati
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/onurtpl/Dotnet8-Angular17-JWT-Authentication-Authorization.git
-   cd Dotnet8-Angular17-JWT-Authentication-Authorization
-   cd frontend
+   cd Dotnet8-Angular17-JWT-Authentication-Authorization/frontend
    npm install
    ```
-
-
+2. **Run backend:**
+ ```bash
+   cd Dotnet8-Angular17-JWT-Authentication-Authorization/backend/API
+   dotnet watch run
+   ```
+3. **Run frontend:**
+ ```bash
+   cd Dotnet8-Angular17-JWT-Authentication-Authorization/frontend
+   ng serve -o
+   ```
 
 ## Project Structure
 ### Backend

@@ -27,7 +27,6 @@ git clone https://github.com/onurtpl/Dotnet8-Angular17-JWT-Authentication-Author
 
 ### Project Structure
 
-|
 ├── backend
 |   ├── API
 |   |   ├── Configurations

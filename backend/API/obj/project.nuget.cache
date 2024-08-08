@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zUbSSOPI/do=",
+  "dgSpecHash": "28bueVy0Zcg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\Dotnet8 Angular17 JWT Authentication Authorization\\backend\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\test\\Dotnet8-Angular17-JWT-Authentication-Authorization\\backend\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",

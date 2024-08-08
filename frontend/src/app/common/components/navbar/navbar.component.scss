@@ -1,22 +1,24 @@
-.mat-menu-content {
-    background-color: white; /* Optional: to set a background color for the dropdown */
-  }
-  
-  .menu-drop {
-    color: #3B82F6 !important; /* Tailwind's blue-500 color */
-  }
-  .mat-menu-item {
-    color: #3B82F6 !important; /* Tailwind's blue-500 color */
-  }
-  
-  .mat-menu-item:hover {
-    background-color: #E5E7EB; /* Tailwind's gray-200 color for hover effect */
-  }
-  
-  .mat-button, .mat-button-wrapper, .mat-focus-indicator {
-    color: #3B82F6 !important;
-  }
-  
-  .mat-button.mat-button-base:focus, .mat-button.mat-button-base:active, .mat-button.mat-button-base:hover {
-    background-color: transparent !important;
-  }
+.navbar {
+  box-shadow: 1px 10px 22px -2px rgba(0,0,0,0.51);
+-webkit-box-shadow: 1px 10px 22px -2px rgba(0,0,0,0.51);
+-moz-box-shadow: 1px 10px 22px -2px rgba(0,0,0,0.51);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .nav-item {
+  margin: 0;
+}
+
+.navbar img {
+  height: 2rem; /* Adjust the size of the logo as needed */
+}

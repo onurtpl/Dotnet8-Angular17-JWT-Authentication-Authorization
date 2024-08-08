@@ -17,7 +17,7 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
   return next(authReq).pipe(
     catchError(err => {
       if (err.status === 401 && !authReq.url.endsWith('/login') && !authReq.url.endsWith('/register') && !authReq.url.endsWith('/refresh-token')) {
-        return authService.handleRefreshToken().pipe(
+        return authService.refreshToken().pipe(
           switchMap(() => {
             const newAuthToken = authService.getAccessToken();
             const newAuthReq = req.clone({
@@ -29,7 +29,7 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
             authService.logout();
             return throwError(() => error);
           })
-        );
+        )
       }
       return throwError(() => err);
     })

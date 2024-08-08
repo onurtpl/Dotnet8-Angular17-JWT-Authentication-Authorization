@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RkYMoMQ09pc=",
+  "dgSpecHash": "+LrRIJoX0xE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\Dotnet8 Angular17 JWT Authentication Authorization\\backend\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\test\\Dotnet8-Angular17-JWT-Authentication-Authorization\\backend\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\mediatr\\12.4.0\\mediatr.12.4.0.nupkg.sha512",

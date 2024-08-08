@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q7a20ttQoWY=",
+  "dgSpecHash": "2XXgBY0A3Kg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\Dotnet8 Angular17 JWT Authentication Authorization\\backend\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\test\\Dotnet8-Angular17-JWT-Authentication-Authorization\\backend\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.7\\microsoft.aspnetcore.cryptography.internal.8.0.7.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.7\\microsoft.aspnetcore.cryptography.keyderivation.8.0.7.nupkg.sha512",

@@ -1,43 +1,37 @@
-<header>
-  <div class="bg-blue-500 text-white p-4 flex justify-between items-center">
-    <div>
-      <a href="mailto:Example@gmail.com" class="mr-4">Example gmail.com</a>
-      <a href="tel:+01234567890">+01234567890</a>
-    </div>
-    <div class="space-x-4">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-pinterest"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
+
+<nav class="navbar bg-[#1F316F] text-white p-4 flex justify-between items-center">
+  <div class="flex space-x-4 items-center mx-4">
+    <img src="assets/images/girmansoft2.png" alt="Girmansoft Logo" class="h-12">
+    <a href="#" class="text-white no-underline">Home</a>
+    <a href="#" class="text-white no-underline">About</a>
+    <a href="#" class="text-white no-underline">Contact</a>
+    <div class="relative" appDropdown>
+      <button class="flex items-center focus:outline-none" id="details-menu-button" aria-expanded="true" aria-haspopup="true">
+        <span class="text-white no-underline">Details</span>
+      </button>
+      <div class="origin-top-right absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none dropdown-menu" role="menu" aria-orientation="vertical" aria-labelledby="details-menu-button" style="display: none;">
+        <a href="#" class="block px-4 py-2 text-sm text-black" role="menuitem">Detail 1</a>
+        <a href="#" class="block px-4 py-2 text-sm text-black" role="menuitem">Detail 2</a>
+        <a href="#" class="block px-4 py-2 text-sm text-black" role="menuitem">Detail 3</a>
+      </div>
     </div>
   </div>
-  <nav class="bg-gray-100 p-4">
-    <ul class="flex justify-around list-none m-0 p-0 items-center">
-      <li><a href="#" class="text-blue-500">Home</a></li>
-      <li><a href="#" class="text-blue-500">About</a></li>
-      <li><a href="#" class="text-blue-500">Services</a></li>
-      <li><a href="#" class="text-blue-500">Causes</a></li>
-      <li><a href="#" class="text-blue-500">Events</a></li>
-      <li class="relative ">
-        <button mat-button [matMenuTriggerFor]="pagesMenu" class="text-blue-500 menu-drop">Pages</button>
-        <mat-menu #pagesMenu="matMenu">
-          <button mat-menu-item>Main</button>
-          <button mat-menu-item>Detail</button>
-        </mat-menu>
-      </li>
-      <li><a href="#" class="text-blue-500">Contact</a></li>
-      @if(this.authService.isAuthenticated()) {
-        <li class="relative ">
-          <button mat-button [matMenuTriggerFor]="pagesMenu" class="text-blue-500 menu-drop">{{fullName}}</button>
-          <mat-menu #pagesMenu="matMenu">
-            <button mat-menu-item routerLink="/detail">Detail</button>
-            <button mat-menu-item (click)="logout()">Logout</button>
-          </mat-menu>
-        </li>
-      } @else {
-        <li><a routerLink="auth/login" class="bg-blue-500 text-white px-4 py-2">Login/Register</a></li>
-      } 
-    </ul>
-  </nav>
-</header>
+  <div class="flex space-x-4 mx-4">
+    <ng-container *ngIf="!isLoggedIn; else loggedInTemplate">
+      <a routerLink="/auth/login" class="text-white no-underline mt-2">Login</a>
+      <a routerLink="/auth/register" class="text-white no-underline mt-2">Register</a>
+    </ng-container>
+    <ng-template #loggedInTemplate>
+      <div class="relative" appDropdown>
+        <button class="flex items-center focus:outline-none" id="user-menu-button" aria-expanded="true" aria-haspopup="true">
+          <img class="h-8 w-8 rounded-full" src="assets/images/user.png" alt="User Avatar">
+        </button>
+        <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none dropdown-menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" style="display: none;">
+          <a href="#" class="block px-4 py-2 text-sm text-black" role="menuitem">Profile</a>
+          <a href="#" class="block px-4 py-2 text-sm text-black" role="menuitem">Settings</a>
+          <a href="#" (click)="logout()" class="block px-4 py-2 text-sm text-black" role="menuitem">Logout</a>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</nav>

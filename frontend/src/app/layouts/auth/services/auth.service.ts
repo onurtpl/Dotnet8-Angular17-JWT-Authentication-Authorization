@@ -23,13 +23,10 @@ export class AuthService {
   private router = inject(Router);
   private tokenKey = 'accessToken';
   private refrehKey = 'refreshToken';
-  private isRefreshing = false;
+  private expireKey = 'expire';
 
   private httpService: GenericHttpService = inject(GenericHttpService);
-  private authStatus = new BehaviorSubject<boolean>(this.hasToken());
-  private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  
-
+ 
   constructor( ) { }
   
   login(credentials: LoginRequest): Observable<JwtPayload> {
@@ -37,6 +34,7 @@ export class AuthService {
       map((response) =>  {
         localStorage.setItem(this.tokenKey, response.accessToken);
         localStorage.setItem(this.refrehKey, response.refreshToken);
+        localStorage.setItem(this.expireKey, response.refreshTokenExpire);
         return this.decodeJwt(response.accessToken)
       })
     );
@@ -51,18 +49,32 @@ export class AuthService {
 
 
   logout() : void {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    this.authStatus.next(false);
+    localStorage.removeItem(this.tokenKey);
+    localStorage.removeItem(this.refrehKey);
+    localStorage.removeItem(this.expireKey);
     this.router.navigate(['/auth/login']);
   }
 
   isAuthenticated(): boolean {
-    return this.authStatus.value;
+    const v = this.hasToken();
+    return v;
   }
 
+
+
   private hasToken(): boolean {
-    return !!localStorage.getItem(this.tokenKey);
+    const token = localStorage.getItem(this.tokenKey);
+    if(!token) {
+      return false;
+    }
+    const expire = localStorage.getItem(this.expireKey);
+    const expireDate = Date.parse(expire!);
+    const isExpire =  Date.now() > expireDate
+    
+    if (isExpire)
+      this.logout();
+    return !isExpire
+    
   }
 
   refreshToken(): Observable<AuthResponse> {
@@ -78,6 +90,7 @@ export class AuthService {
         tap(response => {
           localStorage.setItem(this.tokenKey, response.accessToken);
           localStorage.setItem(this.refrehKey, response.refreshToken);
+          localStorage.setItem(this.expireKey, response.refreshTokenExpire);
         }),
         catchError(error => {
           this.logout();
@@ -86,28 +99,9 @@ export class AuthService {
       )
     
   }
-  handleRefreshToken(): Observable<any> {
-    if (!this.isRefreshing) {
-      this.isRefreshing = true;
-      this.refreshTokenSubject.next(null);
 
-      return this.refreshToken().pipe(
-        tap((res) => {
-          this.isRefreshing = false;
-          this.refreshTokenSubject.next(res.accessToken);
-        })
-      );
-    } else {
-      return this.refreshTokenSubject.pipe(
-        switchMap(token => {
-          if (token) {
-            return of(token);
-          }
-          return of(null);
-        })
-      );
-    }
-  }
+
+
 
   getAccessToken(): string | null {
     return localStorage.getItem('accessToken');
